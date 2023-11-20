@@ -1,0 +1,17 @@
+#计算列
+#关键字：GENERATED ALWAYS AS (设置数据)VIRTUAL
+CREATE TABLE tb1(
+	id INT,
+	a INT,
+	b INT,
+	c INT GENERATED ALWAYS AS (a + b) VIRTUAL
+);
+
+
+
+
+
+
+
+
+
