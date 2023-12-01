@@ -11,11 +11,10 @@
 #见课件
 
 #举例1：在创建从表时添加外键约束（主表必须创建完成）
-
 #主表：
 CREATE TABLE dept(
-dept_id INT PRIMARY KEY,#
-dept_name VARCHAR(15)
+	dept_id INT PRIMARY KEY,
+	dept_name VARCHAR(15)
 )
 
 #从表
@@ -46,9 +45,11 @@ ADD CONSISTENT fk_emp1_dept_id FOREIGN KEY(deptment_id) REFERENCES dept(dept_id)
 
 #举例3：在修改表时删除外键约束
 #可能存在多个外键，再删除时，要删除外键和外键的索引
+
 #1.先删除外键约束（依照外键约束的名）
 ALTER TABLE emp1
 DROP FOREIGN KEY fk_emp1_dept_id;
+
 #2.再删除外键的索引（依照外键约束的名）
 ALTER TABLE emp1
 DROP INDEX fk_emp1_dept_id;

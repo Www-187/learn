@@ -78,8 +78,8 @@ DROP PRIMARY KEY;
 
 #举例：在创建表时添加自增列
 CREATE TABLE test7(
-id INT PRIMARY AUTO_INCREMENT,
-`name` VARCHAR(15)
+	id INT PRIMARY AUTO_INCREMENT,
+	`name` VARCHAR(15)
 );
 
 #举例：在修改表时添加自增列

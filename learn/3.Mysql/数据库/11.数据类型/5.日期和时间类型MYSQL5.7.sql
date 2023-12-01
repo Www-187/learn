@@ -67,7 +67,7 @@ SELECT * FROM test_time1;
 #4.DATETIME
 #见课件
 CREATE TABLE test_datetime1(
-dt DATETIME
+	dt DATETIME
 );
 
 INSERT INTO test_datetime1

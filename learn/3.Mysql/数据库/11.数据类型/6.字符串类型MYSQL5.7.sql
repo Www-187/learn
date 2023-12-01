@@ -38,12 +38,13 @@ CREATE TABLE test_varchar2(
 
 
 #正确写法
-
 CREATE TABLE test_varchar3(
 	NAME VARCHAR(5)
 );
 INSERT INTO test_varchar3
-VALUES('尚硅谷'),('尚硅谷教育');
+VALUES('尚硅谷'),('尚  11');
+
+SELECT * FROM test_varchar3;
 
 #Data too long for column 'NAME' at row 1
 INSERT INTO test_varchar3

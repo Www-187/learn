@@ -9,8 +9,12 @@ CREATE TABLE test2(
 	last_name VARCHAR(15),
 	email VARCHAR(25),
 	salary DECIMAL(10,2),#当设置表级约束时，记得加逗号
-	#表级约束：给email字段加UNIQUE约束，方式1：给这个约束起个名字
-     CONSISTENT	uk_test2_email UNIQUE(email)
+	
+	#表级约束：给email字段加UNIQUE约束
+	
+	#方式1：给这个约束起个名字
+	CONSISTENT uk_test2_email UNIQUE(email)
+	
         #方式2：不给这个约束起个名字，就默认约束的名字和列名相同
         #UNIQUE(email)
 );
@@ -36,6 +40,7 @@ VALUES(3,'yom2',NULL,2000);#成功
 #方式1：
 ALTER TABLE test2
 MODIFY email VARCHAR(25) UNIQUE;
+
 #方式2：
 ALTER TABLE test2
 ADD CONSTRAINT uk_test_email UNIQUE(email);
@@ -56,7 +61,7 @@ CREATE TABLE `user`(
 /*
 4.1添加唯一性约束的列上也会自动创建唯一索引。
 4.2删除唯一约束只能通过删除唯一索引的方式删除。
-4.3删除时需要指定唯一索引名，唯一索引名就和唯一约束名一样。
+4.3删除时需要指定唯一索引名，唯一索引名和唯一约束名一样。
 4.4如果创建唯一约束时未指定名称，如果是单列，就默认和列名相同；如果是组合列，
 那么默认和()中排在第一个的列名相同。也可以自定义唯一性约束名。
 */
