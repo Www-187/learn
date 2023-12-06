@@ -13,7 +13,7 @@ END $
 DELIMITER ;#在还原回去
 
 
-#举例2：存储过程（无参无返回）的调用
+#举例2：
 #关键字：CALL
 CALL select_all_data();
 
@@ -54,7 +54,7 @@ DELIMITER ;
 #方式1：
 CALL select_someone_salary('Abel');
 #方式2：
-SET @empname :='Abel';#将字符串赋值给用户定义的变量empname，
+SET @empname :='Abel';#将字符串赋值给用户定义的会话变量empname，
 CALL select_someone_salary(@empname);#在传递给存储过程
 
 
@@ -69,7 +69,7 @@ END $
 DELIMITER ;
 
 #举例8:调用存储过程（有参有返回），返回某人的工资
-SET @empname :='Abel';#将字符串传递给变量
+SET @empname :='Abel';#将字符串赋值给用户会话变量
 CALL select_someone_salary_INOUT(@empname,@sal);
 SELECT @sal;#查看输出变量
 
